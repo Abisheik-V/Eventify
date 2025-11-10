@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Index from './components/Index.jsx'
 import Services from './components/Services.jsx'
 import Events from './components/Events.jsx'
@@ -13,7 +13,7 @@ import './assets/style/style.css'
 
 function App() {
   return (
-    <BrowserRouter basename="/Eventify">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/services" element={<Services />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/details" element={<Details />} />
         <Route path="/tickets" element={<Tickets />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
