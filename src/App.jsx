@@ -13,7 +13,7 @@ import './assets/style/style.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Eventify">
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/services" element={<Services />} />
