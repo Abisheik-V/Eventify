@@ -1,0 +1,226 @@
+/* Root */
+:root {
+  --em-primary: #8b5cf6;
+  --em-dark: #0b0f19;
+  --em-muted: rgba(255,255,255,0.7);
+  /* Bootstrap theme override */
+  --bs-primary: var(--em-primary);
+}
+
+/* Global sizing: prevent overflow caused by padding/margins */
+*, *::before, *::after { box-sizing: border-box; }
+
+.em-root {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal overflow globally */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Constrain root and media to viewport width */
+html, body, #root { width: 100%; max-width: 100%; }
+img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+iframe { width: 100%; }
+
+/* Navbar */
+.em-navbar {
+  background: #0b0f19;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+.em-navbar .nav-link {
+  color: #e7eaf0;
+}
+.em-navbar .nav-link:hover {
+  color: #fff;
+}
+
+/* Hero */
+.em-hero {
+  min-height: 60vh;
+  padding-top: 72px; /* offset for fixed navbar */
+  padding-bottom: 40px;
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(139,92,246,0.25), transparent 60%),
+              radial-gradient(900px 500px at 90% 80%, rgba(255,255,255,0.08), transparent 60%),
+              linear-gradient(180deg, #0b0f19 0%, #101828 100%);
+}
+.em-hero .lead {
+  color: var(--em-muted);
+}
+.em-hero-card {
+  border-radius: 14px;
+}
+
+/* Sections */
+.em-section {
+  scroll-margin-top: 80px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Reduce extra gap before footer: only the last section above footer gets tighter bottom padding */
+.em-root > .em-section:last-of-type {
+  padding-bottom: 1.25rem;
+}
+.em-section .card {
+  border-radius: 12px;
+}
+.em-section .card-title {
+  font-weight: 700;
+}
+
+/* Footer */
+.em-footer {
+  background: #0b0f19;
+}
+.em-footer a {
+  color: rgba(255,255,255,0.85) !important;
+  text-decoration: none;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+.em-footer a:hover {
+  color: hsl(182, 97%, 47%) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--em-primary);
+  text-underline-offset: 3px;
+}
+.em-footer .text-light-50 {
+  color: rgba(255,255,255,0.65);
+}
+.em-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  background: #0b0f19;
+}
+
+/* Utility */
+.text-light-50 {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+/* Back to top */
+.btn-primary {
+  background-color: var(--em-primary) !important;
+  border-color: var(--em-primary) !important;
+}
+.btn-outline-primary {
+  color: var(--em-primary) !important;
+  border-color: var(--em-primary) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--em-primary) !important;
+  border-color: var(--em-primary) !important;
+}
+.btn-link, a.link-primary { color: var(--em-primary) !important; }
+
+.em-back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  border-radius: 999px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 25px rgba(139,92,246,0.35);
+  z-index: 1040;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+  .em-hero { min-height: auto; padding-bottom: 28px; }
+  .em-section { padding-top: 1.75rem; padding-bottom: 1.75rem; }
+  .em-root > .em-section:last-of-type { padding-bottom: 1rem; }
+}
+
+
+/* --- New theme additions --- */
+/* Global background */
+body {
+  background:
+    radial-gradient(1000px 600px at 10% -10%, rgba(139,92,246,0.08), transparent 60%),
+    radial-gradient(800px 500px at 110% 10%, rgba(16,24,40,0.06), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Hero enhancement */
+.em-hero {
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(139,92,246,0.35), transparent 60%),
+              radial-gradient(900px 500px at 90% 80%, rgba(255,255,255,0.12), transparent 60%),
+              linear-gradient(180deg, #0b0f19 0%, #0f172a 100%);
+}
+
+/* Section surface */
+.em-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.9) 100%);
+}
+
+/* Cards */
+.card {
+  border: 0 !important;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.08) !important;
+  transition: transform .2s ease, box-shadow .2s ease !important;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(2,6,23,0.12) !important;
+}
+
+/* Buttons */
+.btn.btn-primary {
+  background: linear-gradient(90deg, var(--em-primary) 0%, #7c3aed 100%) !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(124,58,237,0.35) !important;
+}
+.btn.btn-primary:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px rgba(124,58,237,0.45) !important;
+}
+
+/* Inputs */
+.form-control, .form-select {
+  border-radius: 10px !important;
+  border-color: rgba(2,6,23,0.08) !important;
+  box-shadow: 0 1px 0 rgba(2,6,23,0.04) inset !important;
+}
+.form-control:focus, .form-select:focus {
+  border-color: rgba(124,58,237,0.5) !important;
+  box-shadow: 0 0 0 .25rem rgba(124,58,237,0.15) !important;
+}
+
+/* Navbar link underline on hover */
+.em-navbar .nav-link {
+  position: relative;
+}
+.em-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0; height: 2px;
+  background: var(--em-primary);
+  transition: width .2s ease;
+}
+.em-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Modal polish */
+.modal-content {
+  border-radius: 14px;
+  box-shadow: 0 24px 56px rgba(2,6,23,0.28);
+}
+.modal-header {
+  border-bottom-color: rgba(2,6,23,0.06);
+}
+.modal-footer {
+  border-top-color: rgba(2,6,23,0.06);
+}
+
+/* Headings */
+h1, .display-5 {
+  letter-spacing: -0.02em;
+}
+h2, h3, h4, h5 {
+  letter-spacing: -0.01em;
+}
